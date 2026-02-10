@@ -126,8 +126,8 @@ class ExposureDualWidget(QSlider):
     def changeMode(self):
         exposureMode=self.win.settings["Exposure"]
         if exposureMode=="Manual":
-            min=self.win.picam2.video_configuration.controls['FrameDurationLimits'][0]
-            max=self.win.picam2.video_configuration.controls['FrameDurationLimits'][1]
+            min=self.win.picam2.camera_controls['FrameDurationLimits'][0]
+            max=self.win.picam2.camera_controls['FrameDurationLimits'][1]
             value=self.win.settings["ExposureMicroseconds"]
         else:
             min=int(self.win.picam2.camera_controls["ExposureValue"][0]*2)
